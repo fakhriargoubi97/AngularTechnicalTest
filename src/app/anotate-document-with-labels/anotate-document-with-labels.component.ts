@@ -28,27 +28,27 @@ constructor(private sanitizer: DomSanitizer,private dialogRef : MatDialog,privat
 
 }
 ngOnInit() {
-  this.documentService.getDocumentById(this.ar.snapshot.params['id']).subscribe((data:Document)=>{
-    console.log(data)
-    this.document = { ...data }
-    this.documentShown = this.sanitizer.bypassSecurityTrustHtml(`<div *ngIf="annotations.length!=0">
+  // this.documentService.getDocumentById(this.ar.snapshot.params['id']).subscribe((data:Document)=>{
+  //   console.log(data)
+  //   this.document = { ...data }
+    /*this.documentShown = this.sanitizer.bypassSecurityTrustHtml(`<div *ngIf="annotations.length!=0">
     <ng-container *ngFor="let annotation of annotations; index as i">
 <ng-container *ngIf="i==0">{{document.text | slice:0:annotations[0].start}}</ng-container><ng-container *ngIf="i!=0">{{document.text | slice:annotations[i-1].start+annotations[i-1].end:annotations[i].start}}</ng-container><span [ngStyle]="{'background-color': annotations[i].label?.color,'border': 'solid ' +annotations[i].label?.color}">{{document.text | slice:annotations[i].start:annotations[i].start+annotations[i].end}} <i style="background-color: azure;">{{annotations[i].label?.name}}</i></span><ng-container *ngIf="i==annotations.length-1">{{document.text | slice:annotations[i].start+annotations[i].end:document.text.length}}</ng-container>
-    </ng-container></div>"`);    
+    </ng-container></div>"`);    */
 
-  });
-  this.labelService.getLabels().subscribe((data:Label[])=>{
-    console.log(data)
-    this.labels= data;
-  })
-  this.annotationService.getAnnotations().subscribe((data:Annotation[])=>{
-    console.log(data)
+  // });
+  // this.labelService.getLabels().subscribe((data:Label[])=>{
+  //   console.log(data)
+  //   this.labels= data;
+  // })
+  // this.annotationService.getAnnotations().subscribe((data:Annotation[])=>{
+  //   console.log(data)
 
-    this.annotations= data;
-  })
-  // this.document = new Document(1,"test","there is a sloth that took him two months to move to another tree 1 km away")
-  // this.labels = [new Label(1,"experience","red"),new Label(2,"Skills","yellow")]
-  // this.annotations = [new Annotation(1,this.document,2,6,this.labels[0]),new Annotation(1,this.document,28,45,this.labels[0])]
+  //   this.annotations= data;
+  // })
+  this.document = new Document(1,"test","there is a sloth that took him two months to move to another tree 1 km away")
+  this.labels = [new Label(1,"experience","red"),new Label(2,"Skills","yellow")]
+  this.annotations = [new Annotation(1,this.document,2,6,this.labels[0]),new Annotation(1,this.document,28,45,this.labels[0])]
   
 }
 selectLabel(id:number) {

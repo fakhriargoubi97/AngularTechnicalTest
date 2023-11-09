@@ -8,10 +8,10 @@
 
 <div>
   <ul [innerHTML]="documentShown">
-    <!-- <div *ngIf="annotations.length!=0">
+     <div *ngIf="annotations.length!=0">
         <ng-container *ngFor="let annotation of annotations; index as i">
   <ng-container *ngIf="i==0">{{document.text | slice:0:annotations[0].start}}</ng-container><ng-container *ngIf="i!=0">{{document.text | slice:annotations[i-1].start+annotations[i-1].end:annotations[i].start}}</ng-container><span [ngStyle]="{'background-color': annotations[i].label?.color,'border': 'solid ' +annotations[i].label?.color}">{{document.text | slice:annotations[i].start:annotations[i].start+annotations[i].end}} <i style="background-color: azure;">{{annotations[i].label?.name}}</i></span><ng-container *ngIf="i==annotations.length-1">{{document.text | slice:annotations[i].start+annotations[i].end:document.text.length}}</ng-container>
-        </ng-container></div> -->
+        </ng-container></div> 
 </ul>
 </div>
 
