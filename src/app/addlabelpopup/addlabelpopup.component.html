@@ -1,0 +1,10 @@
+<form #f="ngForm">
+  <div class="d-flex flex-column">
+    <label for="title">Title</label>
+    <input type="text" name="name" [(ngModel)]="name">
+    <input [cpSaveClickOutside] ="true" [(colorPicker)]="color" [style.background]="color" name="color" [(ngModel)]="color"/>
+    <button type="submit" class="btn btn-primary" (click)="addLabel()">
+add Label    </button>
+    <button class="btn btn-primary" (click)="closeDocumentPopUp()">close</button>
+  </div>
+</form>

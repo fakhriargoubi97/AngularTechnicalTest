@@ -1,0 +1,17 @@
+<table  border="1" align='center'width="50"  >  
+  <thead >  
+    <tr>  
+      <th scope="col">index</th>  
+      <th scope="col">document title</th>
+    </tr>  
+  </thead>  
+  <tbody>  
+          <tr *ngFor="let document of documents;let i = index" (click)="goToAnotateDocumentPage(document.id)">   
+            <td>{{i+1}}</td>   
+            <td>{{document.title}}</td>   
+          </tr>  
+  </tbody>  
+</table>
+
+<button class="btn btn-primary" (click)="openImportDocumentPopUp()">
+import document</button>
