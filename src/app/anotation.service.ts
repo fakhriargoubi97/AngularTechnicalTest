@@ -11,7 +11,7 @@ export class AnotationService {
 
   constructor(private http: HttpClient) { }
 
-  create(annotation: AnnotationPost) {
+  create(annotation: Object) {
     return this.http.post<any>(apiUrl + '/annotations/',annotation );
   }
   getAnnotations():Observable<any>{
